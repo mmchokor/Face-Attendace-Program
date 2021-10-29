@@ -58,6 +58,9 @@ while True:
         if matches[matchIndex]:
             name = classNames[matchIndex].upper()
             # print(name)
+            if name == "LAMA AFFARA":
+                # here a fucntion will be added to send the csv file to the dr and clear it
+                exit()
             markAttendance(name)
         else: name = 'Unknown'
         y1,x2,y2,x1 = faceLoc
