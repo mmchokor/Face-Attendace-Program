@@ -22,7 +22,13 @@ def findEncodings(images):
         encode = face_recognition.face_encodings(img)[0]
         encodeList.append(encode)
     return encodeList
- 
+
+def getInstructorInfo():
+    with open('Instructor_Info.txt') as info:
+        infoArray = info.read().splitlines()
+    infoArray[0] = infoArray[0].upper()
+    return infoArray
+
 def markAttendance(name):
     with open('Attendance.csv','r+') as f:
         myDataList = f.readlines()
@@ -36,6 +42,7 @@ def markAttendance(name):
             f.writelines(f'\n{name},{dtString}')
  
  
+InstructorsInfo = getInstructorInfo()
 encodeListKnown = findEncodings(images)
 print('Encoding Complete')
  
@@ -58,7 +65,7 @@ while True:
         if matches[matchIndex]:
             name = classNames[matchIndex].upper()
             # print(name)
-            if name == "LAMA AFFARA":
+            if name == InstructorsInfo[0]:
                 # here a fucntion will be added to send the csv file to the dr and clear it
                 exit()
             markAttendance(name)
@@ -69,5 +76,5 @@ while True:
         cv2.rectangle(img,(x1,y2-35),(x2,y2),(0,255,0),cv2.FILLED)
         cv2.putText(img,name,(x1+6,y2-6),cv2.FONT_HERSHEY_COMPLEX,0.6,(255,255,255),2)
     
-    cv2.imshow('CMPS327 - Attendance Cam',img)
+    cv2.imshow('Chokors Attendance Camera',img)
     cv2.waitKey(1)
