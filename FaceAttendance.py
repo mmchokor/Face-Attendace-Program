@@ -11,16 +11,6 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email import encoders
 
-path = 'ImagesAttendance'
-images = []
-classNames = []
-myList = os.listdir(path)
-print(myList)
-for cl in myList:
-    curImg = cv2.imread(f'{path}/{cl}')
-    images.append(curImg)
-    classNames.append(os.path.splitext(cl)[0])
-print(classNames)
 
 # A function that take parameter the image from the imagesAttendance folder and find
 # the encoding for it and return it
@@ -100,12 +90,31 @@ def exitFunction():
     print("Exiting Program")
     exit()
 
+
+
+# Loading All images and printing class roaster
+path = 'ImagesAttendance'
+images = []
+classNames = []
+myList = os.listdir(path)
+print(myList)
+for cl in myList:
+    curImg = cv2.imread(f'{path}/{cl}')
+    images.append(curImg)
+    classNames.append(os.path.splitext(cl)[0])
+print(classNames)
+
+# Encoding all the previously loaded images
 InstructorsInfo = getInstructorInfo()
 encodeListKnown = findEncodings(images)
 print('Encoding Complete')
 
+# Opening the webcam
 cap = cv2.VideoCapture(0)
 
+# This while loop is to compare the scanned faces from the database with the faces that are
+# being Scanned by the webcam and marking the attendance of the students if found and it also 
+# localise the face in the camera app and show us the name below the face
 while True:
     success, img = cap.read()
     imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
@@ -140,3 +149,5 @@ while True:
 
     cv2.imshow('Chokors Attendance Camera', img)
     cv2.waitKey(1)
+
+# Mohamed Hammoud Ahmed Chokor
