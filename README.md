@@ -8,6 +8,24 @@ The objective of the project is to create a program that assists University Doct
 
 ---
 
+## How to Use
+
+1. Install all the packages listed in the "Python Packages Used" section in this README
+
+2. Copy the images of the students and the instructor faces to the "ImagesAttendace" folder. The image need to be jpg, and each image has to have the name of the student.
+
+3. Put the information of the instructor in the "Instructor_Info.txt" file.
+    The order of the info:
+    1. The name of the instructor
+    2. The email of the instructor
+    3. The course name/code
+
+4. Execute the program (FaceAttendance.py) and put it in a place so the students can get their face scanned.
+
+5. To exit the program, let the webcam scan the instructor face, and the email will be sent to them.
+
+---
+
 ## Python Packages Used
 
 - numpy
