@@ -134,7 +134,9 @@ while True:
             # print(name)
             if name == InstructorsInfo[0]:
                 # here a fucntion will be added to send the csv file to the dr and clear it
-                sendingEmail(InstructorsInfo)
+                cv2.destroyAllWindows()
+                input("Press Enter to send the email ")
+                # sendingEmail(InstructorsInfo)
                 exitFunction()
 
             markAttendance(name)
