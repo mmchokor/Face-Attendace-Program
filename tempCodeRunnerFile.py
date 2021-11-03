@@ -1,2 +1,0 @@
-
-print('Encoding Complete')
