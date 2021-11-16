@@ -104,8 +104,10 @@ for cl in myList:
     classNames.append(os.path.splitext(cl)[0])
 print(classNames)
 
-# Encoding all the previously loaded images
+# Get the instructor info
 InstructorsInfo = getInstructorInfo()
+
+# Encoding all the previously loaded images
 encodeListKnown = findEncodings(images)
 print('Encoding Complete')
 
