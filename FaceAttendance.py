@@ -138,7 +138,7 @@ while True:
                 # here a fucntion will be added to send the csv file to the dr and clear it
                 cv2.destroyAllWindows()
                 input("Press Enter to send the email ")
-                # sendingEmail(InstructorsInfo)
+                sendingEmail(InstructorsInfo)
                 exitFunction()
 
             markAttendance(name)
