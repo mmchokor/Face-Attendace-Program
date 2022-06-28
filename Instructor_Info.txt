@@ -1,3 +1,3 @@
-Lama Affara
-cmps327chokor@gmail.com
-CMPS327
+Instructor_Name
+Instructor_Email
+Course

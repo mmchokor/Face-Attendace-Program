@@ -1,5 +1,7 @@
 # CMPS327---Project
 
+## [Documentation](./CMPS327%20-%20Project%20Report%20(Face%20Attendance)%20-%20Mohamed%20Hammoud%20Ahmed%20Chokor.docx)
+
 **Version 1.0**
 
 ## Project Objective
